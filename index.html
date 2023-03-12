@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CssBayan</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap');
@@ -22,6 +23,7 @@
         h2 {
             width: 100%;
             font-size: 1.5rem;
+            color: #ccc;
             border-top: 1px solid #000000;
         }
         h2:after {
@@ -52,10 +54,13 @@
             overflow: hidden;
         }
         img {
-            display: none;
+            display: block;
             height: 0;
+            width: 0;
             margin: 0 auto;
-            transition: height 1s linear;
+            opacity: 0.5;
+            transform: scale(0.5,0.5);
+            transition: all 1s ease-in-out;
         }
         input[type=radio]{
             cursor: pointer;
@@ -65,13 +70,23 @@
             z-index: 1;
             opacity: 0;
         }
+        input[type=radio]:hover ~ h2, input[type=radio]:checked ~ h2{
+            color: #000;
+        }
+        input[type=radio]:focus ~ h2, input[type=radio]:active ~ h2{
+            color: #990000;
+        }
         input[type=radio]:checked ~ img, input[type=radio]:hover ~ img {
-            display: block;
+            width: auto;
             height: auto;
+            transform: scale(1,1);
+            opacity: 1;
+            transition: all 1s ease-in-out;
         }
         input[type=radio]:checked ~ h2:after, input[type=radio]:hover ~ h2:after {
             transform: rotate(45deg);
         }
+
 
     </style>
 </head>
@@ -79,11 +94,11 @@
 <div class="wrapper">
     <h1>CSS Bayan</h1>
     <ul>
-        <li><input type="radio" name="bayan" checked><h2>1 mem</h2><img src="http://placehold.it/320x240&text=4:3" alt=""/></li>
-        <li><input type="radio" name="bayan" ><h2>2 mem</h2><img src="http://placehold.it/320x240&text=4:3" alt=""/></li>
-        <li><input type="radio" name="bayan" ><h2>3 mem</h2><img src="http://placehold.it/320x240&text=4:3" alt=""/></li>
-        <li><input type="radio" name="bayan" ><h2>4 mem</h2><img src="http://placehold.it/320x240&text=4:3" alt=""/></li>
-        <li><input type="radio" name="bayan" ><h2>5 mem</h2><img src="http://placehold.it/320x240&text=4:3" alt=""/></li>
+        <li><input type="radio" name="bayan" checked><h2>1 mem</h2><img src="https://dummyimage.com/320x240/ccc/fff.gif" alt=""/></li>
+        <li><input type="radio" name="bayan" ><h2>2 mem</h2><img src="https://dummyimage.com/320x240/ccc/fff.gif" alt=""/></li>
+        <li><input type="radio" name="bayan" ><h2>3 mem</h2><img src="https://dummyimage.com/320x240/ccc/fff.gif" alt=""/></li>
+        <li><input type="radio" name="bayan" ><h2>4 mem</h2><img src="https://dummyimage.com/320x240/ccc/fff.gif" alt=""/></li>
+        <li><input type="radio" name="bayan" ><h2>5 mem</h2><img src="https://dummyimage.com/320x240/ccc/fff.gif" alt=""/></li>
     </ul>
 </div>
 </body>
